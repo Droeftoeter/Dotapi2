@@ -1,10 +1,11 @@
 {
-  "name": "Sjaakmoes/dotapi2",
+  "name": "sjaakmoes/dotapi2",
   "description": "PHP DotA 2 API Client",
   "keywords": ["dota", "api", "steam"],
   "type": "library",
   "homepage": "https://github.com/Sjaakmoes/dotapi2",
   "license": "MIT",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Freek Post",
