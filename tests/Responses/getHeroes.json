@@ -1,0 +1,13 @@
+{
+	"result": {
+		"heroes": [
+			{
+				"name": "npc_dota_hero_antimage",
+				"id": 1
+			}
+		]
+		,
+		"status": 200,
+		"count": 111
+	}
+}

@@ -1,0 +1,69 @@
+{
+	"game_list": [
+		{
+			"activate_time": 1461963392,
+			"deactivate_time": 0,
+			"server_steam_id": "90101092046571529",
+			"lobby_id": "24526328614377488",
+			"league_id": 3454,
+			"lobby_type": 1,
+			"game_time": 2866,
+			"delay": 120,
+			"spectators": 785,
+			"game_mode": 2,
+			"average_mmr": 0,
+			"team_name_radiant": "Team. Spirit",
+			"team_name_dire": "Evil Geniuses",
+			"sort_score": 8785,
+			"last_update_time": 1461966976.000000,
+			"radiant_lead": -2808,
+			"radiant_score": 30,
+			"dire_score": 24,
+			"players": [
+				{
+					"account_id": 91064780,
+					"hero_id": 112
+				},
+				{
+					"account_id": 86723143,
+					"hero_id": 69
+				},
+				{
+					"account_id": 89137399,
+					"hero_id": 20
+				},
+				{
+					"account_id": 26316691,
+					"hero_id": 81
+				},
+				{
+					"account_id": 86727555,
+					"hero_id": 5
+				},
+				{
+					"account_id": 87177591,
+					"hero_id": 2
+				},
+				{
+					"account_id": 111620041,
+					"hero_id": 39
+				},
+				{
+					"account_id": 40547474,
+					"hero_id": 54
+				},
+				{
+					"account_id": 30237211,
+					"hero_id": 80
+				},
+				{
+					"account_id": 250114507,
+					"hero_id": 21
+				}
+			]
+			,
+			"building_state": 16449818
+		}
+	]
+	
+}

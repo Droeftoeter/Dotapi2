@@ -66,6 +66,7 @@ class Guzzle implements HttpClientInterface {
             if($e->getResponse()->getStatusCode() == 403){
                 throw new InvalidKeyException("No Steam WebAPI key has been provided, or the provided key is invalid.");
             }
+            throw new RequestException("Something went wrong while accessing the Steam API.", 0, $e);
         } catch(GuzzleRequestException $e){
             throw new RequestException("Something went wrong while accessing the Steam API.", 0, $e);
         }

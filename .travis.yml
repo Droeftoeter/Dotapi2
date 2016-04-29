@@ -15,3 +15,5 @@ before_install:
 
 install:
   - composer install --no-interaction --prefer-source --dev
+
+script: phpunit

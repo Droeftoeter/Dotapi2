@@ -1,0 +1,16 @@
+{
+	"result": {
+		"items": [
+			{
+				"id": 1,
+				"name": "item_blink",
+				"cost": 2250,
+				"secret_shop": 0,
+				"side_shop": 1,
+				"recipe": 0
+			}
+		]
+		,
+		"status": 200
+	}
+}

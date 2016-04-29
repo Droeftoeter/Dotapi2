@@ -135,18 +135,6 @@ class Client
     }
 
     /**
-     * Get stats about a particular player within a tournament.
-     *
-     * @param Filters\TournamentPlayer $filter
-     *
-     * @return Response
-     */
-    public function getTournamentPlayerStats(Filters\TournamentPlayer $filter)
-    {
-        return $this->get('IDOTA2Match_' . self::DOTA2_APP_ID . '/GetTournamentPlayerStats/v1', $filter);
-    }
-
-    /**
      * @throws EndpointNotImplementedException
      * @todo Implement
      */
@@ -246,6 +234,16 @@ class Client
     }
 
     /**
+     * Get the URL to the latest schema for Dota 2.
+     *
+     * @return Response
+     */
+    public function getSchemaUrl()
+    {
+        return $this->get('IEconItems_' . self::DOTA2_APP_ID . '/GetSchemaURL/v1');
+    }
+
+    /**
      * Get a list of heroes.
      *
      * @param Filters\Hero $filter
@@ -289,12 +287,8 @@ class Client
      *
      * @return Response
      */
-    public function get($uri, $parameters = [])
+    public function get($uri, $parameters = null)
     {
-        if($parameters instanceof Filters\Filter) {
-            $parameters = $parameters->toArray();
-        }
-
         return $this->getHttpClient()->send($this->createRequest($uri, $parameters));
     }
 
@@ -322,13 +316,21 @@ class Client
      * Create a new request
      *
      * @param string $url
-     * @param array $parameters
+     * @param array|Filters\Filter $parameters
      * @param string $method
      *
      * @return Request
      */
-    protected function createRequest($url, array $parameters = [], $method = 'GET')
+    protected function createRequest($url, $parameters = null, $method = 'GET')
     {
+        if ($parameters === null) {
+            $parameters = [];
+        }
+
+        if ($parameters instanceof Filters\Filter) {
+            $parameters = $parameters->toArray();
+        }
+
         $parameters = array_merge([
             'key'   => $this->getKey()
         ], $parameters);

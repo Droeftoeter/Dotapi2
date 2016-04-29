@@ -50,7 +50,7 @@ class UserId
             throw new Exception("GMP Library not installed. Cannot convert SteamIDs.");
         }
 
-        return gmp_strval (gmp_add(gmp_mul(sprintf( "%u", self::SteamIdUpperBits), "4294967296" ), sprintf ("%u", $userId)));
+        return gmp_strval(gmp_add(gmp_mul(sprintf( "%u", bindec(self::SteamIdUpperBits)), "4294967296"), sprintf ("%u", $userId)));
     }
 
 }
