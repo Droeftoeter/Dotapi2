@@ -5,10 +5,11 @@ use Dotapi2\Exceptions\InvalidKeyException;
 use Dotapi2\Exceptions\RequestException;
 use Dotapi2\HttpClients\Message\Request;
 use Dotapi2\HttpClients\Message\Response;
+
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Message\Request as GuzzleRequest;
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
 /**
  * Guzzle HttpClient
@@ -19,7 +20,7 @@ use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
 class Guzzle implements HttpClientInterface {
 
     /**
-     * @var GuzzleClient
+     * @var Client
      */
     protected $client;
 
@@ -60,7 +61,7 @@ class Guzzle implements HttpClientInterface {
         $guzzleRequest = $this->convertToGuzzleRequest($request);
 
         try {
-            $response = $this->client->send($guzzleRequest);
+            $response = $this->client->send($guzzleRequest, ['query' => $request->getParameters()]);
         } catch(ClientException $e){
             if($e->getResponse()->getStatusCode() == 403){
                 throw new InvalidKeyException("No Steam WebAPI key has been provided, or the provided key is invalid.");
@@ -101,8 +102,7 @@ class Guzzle implements HttpClientInterface {
      */
     protected function convertToGuzzleRequest(Request $request)
     {
-        $request = $this->client->createRequest($request->getMethod(), $request->getUrl(), ['query' => $request->getParameters(), 'headers' => $request->getHeaders()]);
-        return $request;
+        return new GuzzleRequest($request->getMethod(), $request->getUrl(), $request->getHeaders());
     }
 
 
