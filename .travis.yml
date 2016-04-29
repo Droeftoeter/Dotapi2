@@ -17,3 +17,7 @@ install:
   - composer install --no-interaction --prefer-source --dev
 
 script: phpunit
+
+addons:
+    code_climate:
+        repo_token: 72bdf57a6d870da742e34cda1d5b447cd1935c586a7b0f82fe468a92b5cd0277
