@@ -8,7 +8,6 @@ use Dotapi2\HttpClients\Message\Response;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
