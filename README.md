@@ -11,6 +11,7 @@ Dota 2 API Wrapper for PHP
  - [Installation](#installation)
  - [Configuration](#configuration)
  - [Supported Endpoints](#supported-endpoints)
+ - [Steam ID Conversion](#steam-id-conversion)
  - [Future Endpoints](#future-endpoints)
 
 ## Installation
@@ -184,6 +185,22 @@ You can also contact a custom endpoint on the Steam API:
 
 ```php
 $response = $client->get('IEconDOTA2_570/GetGameItems/v1', array|Filters\Filter $parameters);
+```
+
+## Steam ID Conversion
+
+If you have the [GMP](http://php.net/manual/en/intro.gmp.php) extension installed, Dotapi2 will allow you to convert 32-bit to 64-bit ID's and the other way around.
+
+To convert a 32-bit ID:
+
+```php
+$steamId = UserId::to64Bit('22785577'); // 76561197983051305
+```
+
+To convert a 64-bit ID:
+
+```php
+$accountId = UserId::to32Bit('76561197983051305'); // 22785577
 ```
 
 ## Future Endpoints
