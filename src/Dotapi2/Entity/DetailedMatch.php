@@ -20,7 +20,7 @@ class DetailedMatch extends Match
      */
     public static $collectionMapping = [
         'players' => 'DetailedSlot',
-        'pick_bans' => 'PickBanSequence',
+        'picks_bans' => 'PickBanSequence',
     ];
 
     /**
@@ -48,9 +48,9 @@ class DetailedMatch extends Match
      *
      * @return PickBanSequence
      */
-    public function getPickBans()
+    public function getPicksBans()
     {
-        return $this->getProperty('pick_bans');
+        return $this->getProperty('picks_bans');
     }
 
     /**

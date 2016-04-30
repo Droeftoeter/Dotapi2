@@ -28,22 +28,22 @@ class DetailedMatchTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\Dotapi2\Collection\DetailedSlot', $this->entity->getPlayers());
     }
 
-    public function testGetPickBansNotInMatch()
+    public function testGetPicksBansNotInMatch()
     {
         $entityFactory = new EntityFactory();
         $entity = $entityFactory->create('DetailedMatch', []);
 
-        $this->assertEquals(null, $entity->getPickBans());
+        $this->assertEquals(null, $entity->getPicksBans());
     }
 
-    public function testGetPickBans()
+    public function testGetPicksBans()
     {
         $entityFactory = new EntityFactory();
         $entity = $entityFactory->create('DetailedMatch', [
-            'pick_bans' => []
+            'picks_bans' => []
         ]);
 
-        $this->assertInstanceOf('\Dotapi2\Collection\PickBanSequence', $entity->getPickBans());
+        $this->assertInstanceOf('\Dotapi2\Collection\PickBanSequence', $entity->getPicksBans());
     }
 
     public function testGetDireTowerStatus()

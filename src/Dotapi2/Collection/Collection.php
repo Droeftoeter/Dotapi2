@@ -135,7 +135,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate
      */
     public function filter(Closure $closure)
     {
-        return new Collection(array_filter($this->entities, $closure));
+        return new self(array_filter($this->entities, $closure));
     }
 
     /**

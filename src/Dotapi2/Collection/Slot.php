@@ -8,7 +8,7 @@ namespace Dotapi2\Collection;
  * @author Freek Post <freek@kobalt.blue>
  * @package Dotapi2\Collection
  */
-class Slot extends Collection
+class Slot extends TeamFilterable
 {
 
     /**

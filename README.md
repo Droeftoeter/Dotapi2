@@ -94,10 +94,16 @@ $response = $client->getMatchDetails(new Filters\MatchDetails(2197925777));
 // Turns response into a DetailedMatch collection
 $match = $response->getEntity('DetailedMatch');
 
-// Echo start time, player count and the amount of kills the first player made.
-echo $match->getStartTime()->format('d-m-Y H:i:s') . PHP_EOL;
-echo $match->getPlayers()->count() . PHP_EOL;
-echo $match->getPlayers()->first()->getKills() . PHP_EOL;
+// Get Dire players
+$direPlayers = $match->getPlayers()->getDire();
+
+// Get a specific player
+$specificPlayer = $match->getPlayers()->getById(22785577);
+$specificPlayerHero = $specificPlayer->getHeroId();
+$specificPlayerKills = $specificPlayer->getKills();
+
+// Get Picks and Bans sequence if matchtype has picks and bans
+$pickBanSequence = $match->getPicksBans();
 ```
 
 ### getLeagueListing

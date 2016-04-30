@@ -8,7 +8,7 @@ namespace Dotapi2\Collection;
  * @author Freek Post <freek@kobalt.blue>
  * @package Dotapi2\Collection
  */
-class DetailedSlot extends Collection
+class DetailedSlot extends Slot
 {
 
     /**
