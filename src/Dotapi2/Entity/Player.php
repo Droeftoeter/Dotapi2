@@ -16,7 +16,7 @@ class Player extends Entity
     /**
      * @const int The ID that marks a player as anonymous.
      */
-    const Anonymous = 4294967295;
+    const ANONYMOUS = 4294967295;
 
     /**
      * Get the 32-bit Dota 2 account id
@@ -47,7 +47,7 @@ class Player extends Entity
      */
     public function isAnonymous()
     {
-        return ($this->getId() == self::Anonymous);
+        return ($this->getId() == self::ANONYMOUS);
     }
 
 }
