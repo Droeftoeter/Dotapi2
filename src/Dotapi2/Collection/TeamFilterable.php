@@ -1,6 +1,7 @@
 <?php
 namespace Dotapi2\Collection;
 
+use Dotapi2\Entity\Entity;
 use Dotapi2\Types\Teams;
 
 /**
@@ -21,7 +22,7 @@ abstract class TeamFilterable extends Collection
      */
     public function getByTeam($team)
     {
-        return $this->filter(function($teamEntity) use ($team) {
+        return $this->filter(function(Entity $teamEntity) use ($team) {
             if ($teamEntity->getTeam() === $team) {
                 return true;
             }
