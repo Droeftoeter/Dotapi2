@@ -49,7 +49,17 @@ $filter = new Filters\Match();
 $filter->setGameMode(GameModes::CaptainsMode);
 $filter->setMinimumPlayers(10);
 $filter->setAccountId(22785577);
+
+// Returns a Response object that contains the raw body and JSON data.
 $response = $client->getMatchHistory($filter);
+
+// Turns response into a Match collection
+$matchCollection = $response->getCollection('Match');
+
+// Loops through all the found matches and dispays the start time.
+foreach ($matchCollection as $match) {
+    echo $match->getStartTime()->format('d-m-Y H:i:s') . PHP_EOL;
+}
 ```
 
 ### getMatchHistoryBySequenceNumber
@@ -57,7 +67,17 @@ $response = $client->getMatchHistory($filter);
 Gets a list of matches ordered by sequence number
 
 ```php
+
+// Returns a Response object that contains the raw body and JSON data.
 $response = $client->getMatchHistoryBySequenceNumber(new Filters\MatchSequence(2040184605, 10));
+
+// Turns response into a Match collection
+$matchCollection = $response->getCollection('Match');
+
+// Loops through all the found matches and dispays the start time.
+foreach ($matchCollection as $match) {
+    echo $match->getStartTime()->format('d-m-Y H:i:s') . PHP_EOL;
+}
 ```
 
 ### getMatchDetails
@@ -65,7 +85,17 @@ $response = $client->getMatchHistoryBySequenceNumber(new Filters\MatchSequence(2
 Gets detailed information about a specific match
 
 ```php
+
+// Returns a Response object that contains the raw body and JSON data.
 $response = $client->getMatchDetails(new Filters\MatchDetails(2328989387));
+
+// Turns response into a DetailedMatch collection
+$match = $response->getEntity('DetailedMatch');
+
+// Echo start time, player count and the amount of kills the first player made.
+echo $match->getStartTime()->format('d-m-Y H:i:s') . PHP_EOL;
+echo $match->getPlayers()->count() . PHP_EOL;
+echo $match->getPlayers()->first()->getKills() . PHP_EOL;
 ```
 
 ### getLeagueListing

@@ -2,6 +2,8 @@
 namespace Dotapi2\Entity;
 
 use DateTime;
+use Dotapi2\Collection\DetailedSlot;
+use Dotapi2\Collection\PickBanSequence;
 use Dotapi2\Types\Teams;
 
 /**
@@ -30,6 +32,66 @@ class DetailedMatch extends Match
         'barracks_status_dire' => 'BarracksStatus',
         'barracks_status_radiant' => 'BarracksStatus',
     ];
+
+    /**
+     * Get the players
+     *
+     * @return DetailedSlot
+     */
+    public function getPlayers()
+    {
+        return $this->getProperty('players');
+    }
+
+    /**
+     * Get the picks and bans made in this match
+     *
+     * @return PickBanSequence
+     */
+    public function getPickBans()
+    {
+        return $this->getProperty('pick_bans');
+    }
+
+    /**
+     * Get the Dire tower status
+     *
+     * @return TowerStatus
+     */
+    public function getDireTowerStatus()
+    {
+        return $this->getProperty('tower_status_dire');
+    }
+
+    /**
+     * Get the Radiant tower status
+     *
+     * @return TowerStatus
+     */
+    public function getRadiantTowerStatus()
+    {
+        return $this->getProperty('tower_status_radiant');
+    }
+
+    /**
+     * Get the Dire barracks status
+     *
+     * @return BarracksStatus
+     */
+    public function getDireBarracksStatus()
+    {
+        return $this->getProperty('barracks_status_dire');
+    }
+
+    /**
+     * Get the Radiant barracks status
+     *
+     * @return BarracksStatus
+     */
+    public function getRadiantBarracksStatus()
+    {
+        return $this->getProperty('barracks_status_radiant');
+    }
 
     /**
      * Get the winning team (Refer to Teams:: for definitions)

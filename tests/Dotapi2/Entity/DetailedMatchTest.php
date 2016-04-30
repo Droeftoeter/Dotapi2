@@ -1,6 +1,8 @@
 <?php
 namespace Dotapi2\Tests\Entity;
 
+use Dotapi2\Entity\EntityFactory;
+
 class DetailedMatchTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -19,6 +21,49 @@ class DetailedMatchTest extends \PHPUnit_Framework_TestCase
         $matchData = json_decode(file_get_contents('./tests/Responses/getMatchDetails.json'), true);
         $this->data = $matchData['result'];
         $this->entity = $entityFactory->create('DetailedMatch', $this->data);
+    }
+
+    public function testGetPlayers()
+    {
+        $this->assertInstanceOf('\Dotapi2\Collection\DetailedSlot', $this->entity->getPlayers());
+    }
+
+    public function testGetPickBansNotInMatch()
+    {
+        $entityFactory = new EntityFactory();
+        $entity = $entityFactory->create('DetailedMatch', []);
+
+        $this->assertEquals(null, $entity->getPickBans());
+    }
+
+    public function testGetPickBans()
+    {
+        $entityFactory = new EntityFactory();
+        $entity = $entityFactory->create('DetailedMatch', [
+            'pick_bans' => []
+        ]);
+
+        $this->assertInstanceOf('\Dotapi2\Collection\PickBanSequence', $entity->getPickBans());
+    }
+
+    public function testGetDireTowerStatus()
+    {
+        $this->assertInstanceOf('\Dotapi2\Entity\TowerStatus', $this->entity->getDireTowerStatus());
+    }
+
+    public function testGetRadiantTowerStatus()
+    {
+        $this->assertInstanceOf('\Dotapi2\Entity\TowerStatus', $this->entity->getRadiantTowerStatus());
+    }
+
+    public function testGetDireBarracksStatus()
+    {
+        $this->assertInstanceOf('\Dotapi2\Entity\BarracksStatus', $this->entity->getDireBarracksStatus());
+    }
+
+    public function testGetRadiantBarracksStatus()
+    {
+        $this->assertInstanceOf('\Dotapi2\Entity\BarracksStatus', $this->entity->getRadiantBarracksStatus());
     }
 
     public function testGetWinningTeam()
