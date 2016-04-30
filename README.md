@@ -47,7 +47,7 @@ Gets a filtered match history
 
 ```php
 $filter = new Filters\Match();
-$filter->setGameMode(GameModes::CaptainsMode);
+$filter->setGameMode(GameModes::CAPTAINS__MODE);
 $filter->setMinimumPlayers(10);
 $filter->setAccountId(22785577);
 
@@ -144,7 +144,7 @@ $response = $client->getGameItems();
 Get the CDN path for a specific icon.
 
 ```php
-$response = $client->getItemIconPath(new Filters\ItemIconPath('enchanted_manglewood_staff', IconType::Large));
+$response = $client->getItemIconPath(new Filters\ItemIconPath('enchanted_manglewood_staff', IconType::LARGE));
 ```
 
 ### getSchemaUrl
@@ -212,4 +212,4 @@ $accountId = UserId::to32Bit('76561197983051305'); // 22785577
  - getTeamInfo
  - getEventStatsForAccount
  - getRealTimeStats
- 
+

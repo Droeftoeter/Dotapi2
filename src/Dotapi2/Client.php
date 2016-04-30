@@ -136,7 +136,6 @@ class Client
 
     /**
      * @throws EndpointNotImplementedException
-     * @todo Implement
      */
     public function getFantasyPlayerStats()
     {
@@ -145,7 +144,6 @@ class Client
 
     /**
      * @throws EndpointNotImplementedException
-     * @todo Implement
      */
     public function getPlayerOfficialInfo()
     {
@@ -154,7 +152,6 @@ class Client
 
     /**
      * @throws EndpointNotImplementedException
-     * @todo Implement
      */
     public function getBroadcasterInfo()
     {
@@ -163,7 +160,6 @@ class Client
 
     /**
      * @throws EndpointNotImplementedException
-     * @todo Implement
      */
     public function getActiveTournamentList()
     {
@@ -172,7 +168,6 @@ class Client
 
     /**
      * @throws EndpointNotImplementedException
-     * @todo Implement
      */
     public function getTeamInfo()
     {
@@ -193,7 +188,6 @@ class Client
 
     /**
      * @throws EndpointNotImplementedException
-     * @todo Implement
      */
     public function getEventStatsForAccount()
     {
@@ -202,7 +196,6 @@ class Client
 
     /**
      * @throws EndpointNotImplementedException
-     * @todo Implement
      */
     public function getRealTimeStats()
     {

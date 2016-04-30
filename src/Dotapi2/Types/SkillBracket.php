@@ -9,9 +9,9 @@ namespace Dotapi2\Types;
  */
 abstract class SkillBracket {
 
-    const Any      = 0;
-    const Normal   = 1;
-    const High     = 2;
-    const VeryHigh = 3;
+    const ANY       = 0;
+    const NORMAL    = 1;
+    const HIGH      = 2;
+    const VERY_HIGH = 3;
 
 }

@@ -18,7 +18,7 @@ class ItemIconPath extends Filter
      * @param string $iconName
      * @param int $iconType
      */
-    public function __construct($iconName, $iconType = IconType::Normal)
+    public function __construct($iconName, $iconType = IconType::NORMAL)
     {
         parent::__construct();
         $this->setIconName($iconName);

@@ -17,7 +17,7 @@ class UserId
     /**
      * @const int
      */
-    const SteamIdUpperBits = "00000001000100000000000000000001";
+    const STEAM_ID_UPPER_BITS = "00000001000100000000000000000001";
 
     /**
      * Conver 64-bit SteamID to 32-bit SteamID
@@ -33,7 +33,7 @@ class UserId
             throw new Exception("GMP Library not installed. Cannot convert SteamIDs.");
         }
 
-        return gmp_strval(gmp_sub($userId, gmp_mul(bindec(self::SteamIdUpperBits), "4294967296")));
+        return gmp_strval(gmp_sub($userId, gmp_mul(bindec(self::STEAM_ID_UPPER_BITS), "4294967296")));
     }
 
     /**
@@ -50,7 +50,7 @@ class UserId
             throw new Exception("GMP Library not installed. Cannot convert SteamIDs.");
         }
 
-        return gmp_strval(gmp_add(gmp_mul(sprintf( "%u", bindec(self::SteamIdUpperBits)), "4294967296"), sprintf ("%u", $userId)));
+        return gmp_strval(gmp_add(gmp_mul(sprintf( "%u", bindec(self::STEAM_ID_UPPER_BITS)), "4294967296"), sprintf ("%u", $userId)));
     }
 
 }

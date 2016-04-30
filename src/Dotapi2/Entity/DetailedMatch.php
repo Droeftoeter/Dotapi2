@@ -100,7 +100,7 @@ class DetailedMatch extends Match
      */
     public function getWinningTeam()
     {
-        return ($this->getProperty('radiant_win')) ? Teams::Radiant : Teams::Dire;
+        return ($this->getProperty('radiant_win')) ? Teams::RADIANT : Teams::DIRE;
     }
 
     /**

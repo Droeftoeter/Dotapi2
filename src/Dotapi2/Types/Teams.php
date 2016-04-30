@@ -9,9 +9,9 @@ namespace Dotapi2\Types;
  */
 abstract class Teams {
 
-    const Radiant       = 0;
-    const Dire          = 1;
-    const Broadcaster   = 2;
-    const Unassigned    = 3;
+    const RADIANT       = 0;
+    const DIRE          = 1;
+    const BROADCASTER   = 2;
+    const UNASSIGNED    = 3;
 
 }

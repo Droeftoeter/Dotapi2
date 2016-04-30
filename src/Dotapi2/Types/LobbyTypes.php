@@ -9,13 +9,13 @@ namespace Dotapi2\Types;
  */
 abstract class LobbyTypes {
 
-    const Invalid           = -1;
-    const PublicMatch       = 0;
-    const Practice          = 1;
-    const Tournament        = 2;
-    const Tutorial          = 3;
-    const Coop              = 4;
-    const Team              = 5;
-    const Solo              = 6;
+    const INVALID           = -1;
+    const PUBLIC_MATCH      = 0;
+    const PRACTICE          = 1;
+    const TOURNAMENT        = 2;
+    const TUTORIAL          = 3;
+    const COOP              = 4;
+    const TEAM              = 5;
+    const SOLO              = 6;
 
 }

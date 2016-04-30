@@ -9,21 +9,21 @@ namespace Dotapi2\Types;
  */
 abstract class GameModes {
 
-    const None                  = 0;
-    const AllPick               = 1;
-    const CaptainsMode          = 2;
-    const RandomDraft           = 3;
-    const SingleDraft           = 4;
-    const AllRandom             = 5;
-    const Intro                 = 6;
-    const Diretide              = 7;
-    const ReverseCaptainsMode   = 8;
-    const TheGreeviling         = 9;
-    const Tutorial              = 10;
-    const MidOnly               = 11;
-    const LeastPlayed           = 12;
-    const NewPlayerPool         = 13;
-    const Compendium            = 14;
-    const CaptainsDraft         = 15;
+    const NONE                  = 0;
+    const ALL_PICK              = 1;
+    const CAPTAINS_MODE         = 2;
+    const RANDOM_DRAFT          = 3;
+    const SINGLE_DRAFT          = 4;
+    const ALL_RANDOM            = 5;
+    const INTRO                 = 6;
+    const DIRETIDE              = 7;
+    const REVERSE_CAPTAINS_MODE = 8;
+    const THE_GREEVILING        = 9;
+    const TUTORIAL              = 10;
+    const MID_ONLY              = 11;
+    const LEAST_PLAYED          = 12;
+    const NEW_PLAYER_POOL       = 13;
+    const COMPENDIUM            = 14;
+    const CAPTAINS_DRAFT        = 15;
 
 }

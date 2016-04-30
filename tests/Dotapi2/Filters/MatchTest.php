@@ -17,18 +17,18 @@ class MatchTest extends PHPUnit_Framework_TestCase
     public function testSetGameMode()
     {
         $filter = new Filters\Match();
-        $filter->setGameMode(\Dotapi2\Types\GameModes::AllRandom);
+        $filter->setGameMode(\Dotapi2\Types\GameModes::ALL_RANDOM);
         $this->assertArraySubset([
-            'game_mode' => \Dotapi2\Types\GameModes::AllRandom
+            'game_mode' => \Dotapi2\Types\GameModes::ALL_RANDOM
         ], $filter->toArray());
     }
 
     public function testSetSkillBracket()
     {
         $filter = new Filters\Match();
-        $filter->setSkillBracket(\Dotapi2\Types\SkillBracket::High);
+        $filter->setSkillBracket(\Dotapi2\Types\SkillBracket::HIGH);
         $this->assertArraySubset([
-            'skill' => \Dotapi2\Types\SkillBracket::High
+            'skill' => \Dotapi2\Types\SkillBracket::HIGH
         ], $filter->toArray());
     }
 

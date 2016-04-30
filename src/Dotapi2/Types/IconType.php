@@ -9,8 +9,8 @@ namespace Dotapi2\Types;
  */
 abstract class IconType {
 
-    const Normal = 0;
-    const Large  = 1;
-    const InGame = 2;
+    const NORMAL = 0;
+    const LARGE  = 1;
+    const INGAME = 2;
 
 }
