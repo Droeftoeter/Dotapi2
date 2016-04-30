@@ -3,6 +3,7 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/5723bcb6ba37ce0031fc1f6d/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5723bcb6ba37ce0031fc1f6d)
 [![Test Coverage](https://codeclimate.com/github/Sjaakmoes/Dotapi2/badges/coverage.svg)](https://codeclimate.com/github/Sjaakmoes/Dotapi2/coverage)
 [![Code Climate](https://codeclimate.com/github/Sjaakmoes/Dotapi2/badges/gpa.svg)](https://codeclimate.com/github/Sjaakmoes/Dotapi2)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/51265f11-7c1b-4129-aeb2-764cd64d452e/mini.png)](https://insight.sensiolabs.com/projects/51265f11-7c1b-4129-aeb2-764cd64d452e)
 
 Dota 2 API Wrapper for PHP
 
