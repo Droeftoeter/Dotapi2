@@ -1,7 +1,12 @@
 <?php
 namespace Dotapi2\HttpClients\Message;
 
+use Dotapi2\Collection\CollectionFactory;
+use Dotapi2\Collection\Collection;
+use Dotapi2\Entity\Entity;
+use Dotapi2\Entity\EntityFactory;
 use Dotapi2\HttpClients\HttpClientInterface;
+use Dotapi2\Exceptions\Exception;
 
 /**
  * HTTP Response
@@ -135,6 +140,44 @@ class Response {
     public function getJson()
     {
         return ($this->isJson()) ? $this->json : [];
+    }
+
+    /**
+     * Get result JSON data
+     *
+     * @return array
+     */
+    public function getResult()
+    {
+        return ($this->isJson() && isset($this->json['result'])) ? $this->json['result'] : [];
+    }
+
+    /**
+     * Get collection from response.
+     *
+     * @param string $collectionType
+     *
+     * @return Collection
+     * @throws Exception
+     */
+    public function getCollection($collectionType)
+    {
+        $collectionFactory = new CollectionFactory();
+        return $collectionFactory->create($collectionType, $this->getResult());
+    }
+
+    /**
+     * Get entity from response
+     *
+     * @param string $entityType
+     *
+     * @return Entity
+     * @throws Exception
+     */
+    public function getEntity($entityType)
+    {
+        $entityFactory = new EntityFactory();
+        return $entityFactory->create($entityType, $this->getResult());
     }
 
 }

@@ -9,6 +9,7 @@ use Dotapi2\HttpClients\Message\Response;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
 /**
@@ -67,7 +68,7 @@ class Guzzle implements HttpClientInterface {
                 throw new InvalidKeyException("No Steam WebAPI key has been provided, or the provided key is invalid.");
             }
             throw new RequestException("Something went wrong while accessing the Steam API.", 0, $e);
-        } catch(GuzzleRequestException $e){
+        } catch(TransferException $e){
             throw new RequestException("Something went wrong while accessing the Steam API.", 0, $e);
         }
 

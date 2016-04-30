@@ -55,6 +55,13 @@ class GuzzleTest extends PHPUnit_Framework_TestCase
         $this->client->send(new HttpClients\Message\Request(''));
     }
 
+    public function testSendUnavailableException()
+    {
+        $this->expectException(Exceptions\RequestException::class);
+        $this->mockHandler->append(new Response('503'));
+        $this->client->send(new HttpClients\Message\Request(''));
+    }
+
     public function testGetLastResponse()
     {
         $this->mockHandler->append(new Response('200'));
