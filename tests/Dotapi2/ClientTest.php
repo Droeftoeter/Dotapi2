@@ -90,32 +90,47 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
     public function testGetFantasyPlayerStats()
     {
-        $this->expectException(Exceptions\EndpointNotImplementedException::class);
-        $this->client->getFantasyPlayerStats();
+        $file = file_get_contents('./tests/Responses/getFantasyPlayerStats.json');
+        $this->mockHandler->append(new Response('200', [], $file));
+
+        $response = $this->client->getFantasyPlayerStats(new \Dotapi2\Filters\FantasyPlayerStats(4266, null, null, null, null, 87278757));
+        $this->assertArraySubset(json_decode($file, true), $response->getJson());
     }
 
     public function testGetPlayerOfficialInfo()
     {
-        $this->expectException(Exceptions\EndpointNotImplementedException::class);
-        $this->client->getPlayerOfficialInfo();
+        $file = file_get_contents('./tests/Responses/getPlayerOfficialInfo.json');
+        $this->mockHandler->append(new Response('200', [], $file));
+
+        $response = $this->client->getPlayerOfficialInfo(new \Dotapi2\Filters\AccountId(87278757));
+        $this->assertArraySubset(json_decode($file, true), $response->getJson());
     }
 
     public function testGetBroadcasterInfo()
     {
-        $this->expectException(Exceptions\EndpointNotImplementedException::class);
-        $this->client->getBroadcasterInfo();
+        $file = file_get_contents('./tests/Responses/getBroadcasterInfo.json');
+        $this->mockHandler->append(new Response('200', [], $file));
+
+        $response = $this->client->getBroadcasterInfo(new \Dotapi2\Filters\BroadcasterInfo(76561197971273450));
+        $this->assertArraySubset(json_decode($file, true), $response->getJson());
     }
 
     public function testGetTestActiveTournamentList()
     {
-        $this->expectException(Exceptions\EndpointNotImplementedException::class);
-        $this->client->getActiveTournamentList();
+        $file = file_get_contents('./tests/Responses/getActiveTournamentList.json');
+        $this->mockHandler->append(new Response('200', [], $file));
+
+        $response = $this->client->getActiveTournamentList();
+        $this->assertArraySubset(json_decode($file, true), $response->getJson());
     }
 
     public function testGetTeamInfo()
     {
-        $this->expectException(Exceptions\EndpointNotImplementedException::class);
-        $this->client->getTeamInfo();
+        $file = file_get_contents('./tests/Responses/getTeamInfo.json');
+        $this->mockHandler->append(new Response('200', [], $file));
+
+        $response = $this->client->getTeamInfo(new \Dotapi2\Filters\TeamInfo(1838315));
+        $this->assertArraySubset(json_decode($file, true), $response->getJson());
     }
 
     public function testGetTopLiveGame()
@@ -129,14 +144,20 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
     public function testGetEventStatsForAccount()
     {
-        $this->expectException(Exceptions\EndpointNotImplementedException::class);
-        $this->client->getEventStatsForAccount();
+        $file = file_get_contents('./tests/Responses/getEventStatsForAccount.json');
+        $this->mockHandler->append(new Response('200', [], $file));
+
+        $response = $this->client->getEventStatsForAccount(new \Dotapi2\Filters\EventStats(4266, 22785577));
+        $this->assertArraySubset(json_decode($file, true), $response->getJson());
     }
 
     public function testGetRealTimeStats()
     {
-        $this->expectException(Exceptions\EndpointNotImplementedException::class);
-        $this->client->getRealTimeStats();
+        $file = file_get_contents('./tests/Responses/getRealTimeStats.json');
+        $this->mockHandler->append(new Response('200', [], $file));
+
+        $response = $this->client->getRealTimeStats(new \Dotapi2\Filters\RealTimeStats(90101107122956292));
+        $this->assertArraySubset(json_decode($file, true), $response->getJson());
     }
 
     public function testGetGameItems()

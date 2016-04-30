@@ -6,7 +6,6 @@ use Dotapi2\HttpClients\Guzzle;
 use Dotapi2\HttpClients\HttpClientInterface;
 use Dotapi2\HttpClients\Message\Request;
 use Dotapi2\HttpClients\Message\Response;
-use Dotapi2\Exceptions\EndpointNotImplementedException;
 
 /**
  * Dotapi2 Client
@@ -135,43 +134,61 @@ class Client
     }
 
     /**
-     * @throws EndpointNotImplementedException
+     * Get fantasy player stats
+     *
+     * @param Filters\FantasyPlayerStats $filter
+     *
+     * @return Response
      */
-    public function getFantasyPlayerStats()
+    public function getFantasyPlayerStats(Filters\FantasyPlayerStats $filter)
     {
-        throw new EndpointNotImplementedException();
+        return $this->get('IDOTA2Fantasy_' . self::DOTA2_APP_ID . '/GetFantasyPlayerStats/v1', $filter);
     }
 
     /**
-     * @throws EndpointNotImplementedException
+     * Get official player information.
+     *
+     * @param Filters\AccountId $filter
+     *
+     * @return Response
      */
-    public function getPlayerOfficialInfo()
+    public function getPlayerOfficialInfo(Filters\AccountId $filter)
     {
-        throw new EndpointNotImplementedException();
+        return $this->get('IDOTA2Fantasy_' . self::DOTA2_APP_ID . '/GetPlayerOfficialInfo/v1', $filter);
     }
 
     /**
-     * @throws EndpointNotImplementedException
+     * Get broadcaster info
+     *
+     * @param Filters\BroadcasterInfo $filter
+     *
+     * @return Response
      */
-    public function getBroadcasterInfo()
+    public function getBroadcasterInfo(Filters\BroadcasterInfo $filter)
     {
-        throw new EndpointNotImplementedException();
+        return $this->get('IDOTA2StreamSystem_' . self::DOTA2_APP_ID . '/GetBroadcasterInfo/v1', $filter);
     }
 
     /**
-     * @throws EndpointNotImplementedException
+     * Gets list of active tournament
+     *
+     * @return Response
      */
     public function getActiveTournamentList()
     {
-        throw new EndpointNotImplementedException();
+        return $this->get('IDOTA2AutomatedTourney_' . self::DOTA2_APP_ID . '/GetActiveTournamentList/v1');
     }
 
     /**
-     * @throws EndpointNotImplementedException
+     * Get team info
+     *
+     * @param Filters\TeamInfo|null $filter
+     *
+     * @return Response
      */
-    public function getTeamInfo()
+    public function getTeamInfo(Filters\TeamInfo $filter = null)
     {
-        throw new EndpointNotImplementedException();
+        return $this->get('IDOTA2Teams_' . self::DOTA2_APP_ID . '/GetTeamInfo/v1', $filter);
     }
 
     /**
@@ -187,19 +204,27 @@ class Client
     }
 
     /**
-     * @throws EndpointNotImplementedException
+     * Retrieve event statistics for account.
+     *
+     * @param Filters\EventStats $filter
+     *
+     * @return Response
      */
-    public function getEventStatsForAccount()
+    public function getEventStatsForAccount(Filters\EventStats $filter)
     {
-        throw new EndpointNotImplementedException();
+        return $this->get('IEconDOTA2_' . self::DOTA2_APP_ID . '/GetEventStatsForAccount/v1', $filter);
     }
 
     /**
-     * @throws EndpointNotImplementedException
+     * Retrieve real time stats about a match with a server steam id
+     *
+     * @param Filters\RealTimeStats $filter
+     *
+     * @return Response
      */
-    public function getRealTimeStats()
+    public function getRealTimeStats(Filters\RealTimeStats $filter)
     {
-        throw new EndpointNotImplementedException();
+        return $this->get('IDOTA2MatchStats_' . self::DOTA2_APP_ID . '/GetRealtimeStats/v1', $filter);
     }
 
     /**

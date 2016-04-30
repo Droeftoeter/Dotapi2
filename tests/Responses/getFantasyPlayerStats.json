@@ -1,0 +1,27 @@
+{
+	"result": {
+		"StatsList": [
+			{
+				"PlayerAccountID": 87278757,
+				"PlayerName": "Puppey",
+				"Role": 2,
+				"Score": 105.168282,
+				"Matches": 28,
+				"AverageLevel": 12.678572,
+				"AverageKills": 2.357143,
+				"AverageDeaths": 4.607143,
+				"AverageAssists": 8.142858,
+				"AverageLastHits": 62.035713,
+				"AverageDenies": 2.250000,
+				"AverageGPM": 267.116974,
+				"AverageXPPM": 273.395813,
+				"AverageStuns": 9.243658,
+				"AverageHealing": 1868.107178,
+				"AverageTowerKills": 0.464286,
+				"AverageRoshanKills": 0.107143
+			}
+		]
+		
+	}
+}
+

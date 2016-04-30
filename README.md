@@ -12,8 +12,27 @@ Dota 2 API Wrapper for PHP
  - [Installation](#installation)
  - [Configuration](#configuration)
  - [Supported Endpoints](#supported-endpoints)
+  - [getMatchHistory](#getmatchhistory)
+  - [getMatchHistoryBySequenceNumber](#getmatchhistorybysequencenumber)
+  - [getMatchDetails](#getmatchdetails)
+  - [getLeagueListing](#getleaguelisting)
+  - [getLiveLeagueGames](#getliveleaguegames)
+  - [getScheduledLeagueGames](#getscheduledleaguegames)
+  - [getFantasyPlayerStats](#getfantasyplayerstats)
+  - [getPlayerOfficialInfo](#getplayerofficialinfo)
+  - [getBroadcasterInfo](#getbroadcasterinfo)
+  - [getActiveTournamentList](#getactivetournamentlist)
+  - [getTeamInfo](#getteaminfo)
+  - [getTopLiveGame](#gettoplivegame)
+  - [getEventStatsForAccount](#geteventstatsforaccount)
+  - [getRealTimeStats](#getrealtimestats)
+  - [getGameItems](#getgameitems)
+  - [getItemIconPath](#getitemiconpath)
+  - [getSchemaUrl](#getschemaurl)
+  - [getHeroes](#getheroes)
+  - [getRarities](#getrarities)
+  - [getTournamentPrizePool](#gettournamentprizepool)
  - [Steam ID Conversion](#steam-id-conversion)
- - [Future Endpoints](#future-endpoints)
 
 ## Installation
 
@@ -130,12 +149,75 @@ Get a list of scheduled league games coming up.
 $response = $client->getScheduledLeagueGames();
 ```
 
+### getFantasyPlayerStats
+
+Get fantasy player stats
+
+```php
+// Puppey (87278757) in The Shanghai Major (4266)
+$response = $client->getFantasyPlayerStats(new Filters\FantasyPlayerStats(4266, 87278757));
+```
+
+### getPlayerOfficialInfo
+
+Get official player information.
+
+```php
+// Puppey (87278757)
+$response = $client->getPlayerOfficialInfo(new Filters\AccountId(87278757));
+```
+
+### getBroadcasterInfo
+
+Get broadcaster info with the 64-bit Steam ID.
+If you need to convert, check [Steam ID Conversion](#steam-id-conversion).
+
+```php
+// Requires the 64-bit Steam ID of a broadcaster.
+$response = $client->getBroadcasterInfo(new Filters\BroadcasterInfo(76561197997412731));
+```
+
+### getActiveTournamentList
+
+Gets list of active tournament
+
+```php
+$response = $client->getActiveTournamentList();
+```
+
+### getTeamInfo
+
+Get team info
+
+```php
+// Get team info for Team Secret (1838315). Filter is optional.
+$response = $client->getTeamInfo(new Filters\TeamInfo(1838315));
+```
+
 ### getTopLiveGame
 
 Get the top live games.
 
 ```php
 $response = $client->getTopLiveGame(new Filters\TopLiveGame(0));
+```
+
+### getEventStatsForAccount
+
+Retrieve event statistics for account.
+
+```php
+// Get stats for account 22785577 at The Shanghai Major (4266)
+$response = $client->getEventStatsForAccount(new Filters\EventStats(4266, 22785577));
+```
+
+### getRealTimeStats
+
+Retrieve real time stats about a match with a server steam id.
+You need a steam server id to get statistics, the top live games and some other tournament endpoint provide these for a match.
+
+```php
+$response = $client->getRealTimeStats(new Filters\RealTimeStats(steam_server_id_here));
 ```
 
 ### getGameItems
@@ -210,13 +292,4 @@ To convert a 64-bit ID:
 $accountId = UserId::to32Bit('76561197983051305'); // 22785577
 ```
 
-## Future Endpoints
-
- - getFantasyPlayerStats
- - getPlayerOfficialInfo
- - getBroadcasterInfo
- - getActiveTournamentList
- - getTeamInfo
- - getEventStatsForAccount
- - getRealTimeStats
 
