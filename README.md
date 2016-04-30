@@ -87,7 +87,7 @@ Gets detailed information about a specific match
 ```php
 
 // Returns a Response object that contains the raw body and JSON data.
-$response = $client->getMatchDetails(new Filters\MatchDetails(2328989387));
+$response = $client->getMatchDetails(new Filters\MatchDetails(2197925777));
 
 // Turns response into a DetailedMatch collection
 $match = $response->getEntity('DetailedMatch');
